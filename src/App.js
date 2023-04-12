@@ -25,7 +25,7 @@ function App() {
 
     const getName = async () => {
       try {
-        const res = await axios.get('https://corschekcerserver.vercel.app/check?name=Santosh&message=Hello, Iam santosh.');
+        const res = await axios.post('https://corschekcerserver.vercel.app/check?name=Santosh&message=Hello, Iam santosh.');
         if(res.status===200) {
           console.log(res);
 
