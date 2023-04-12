@@ -4,7 +4,6 @@ import axios from "axios";
 function App() {
 
     // let [email, setEmail] = useState("");
-    
     let [name, setName] = useState("");
     let [username, setusername] = useState("");
     let [password, setpassword] = useState("");
@@ -23,6 +22,20 @@ function App() {
         }
 
     }
+
+    const getName = () => {
+      try {
+        const res = axios.get('https://corschekcerserver.vercel.app/check?name=Santosh&message=Hello, Iam santosh.');
+        if(res.status===200) {
+          console.log(res);
+
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+
+
     return (
         <>
             <div className='home-bg vh-100' >
@@ -46,6 +59,7 @@ function App() {
                         </div>
                         <div className='d-grid gap-2 col-10 mx-auto ' >
                             <button type="submit" className="btn btn-primary rounded-pill mt-3">Submit</button>
+                            <button type="button" className="btn btn-primary rounded-pill mt-3">Get Name</button>
                         </div>
                     </form>
                 </div>
