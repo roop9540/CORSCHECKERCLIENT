@@ -23,9 +23,9 @@ function App() {
 
     }
 
-    const getName = () => {
+    const getName = async () => {
       try {
-        const res = axios.get('https://corschekcerserver.vercel.app/check?name=Santosh&message=Hello, Iam santosh.');
+        const res = await axios.get('https://corschekcerserver.vercel.app/check?name=Santosh&message=Hello, Iam santosh.');
         if(res.status===200) {
           console.log(res);
 
@@ -59,7 +59,7 @@ function App() {
                         </div>
                         <div className='d-grid gap-2 col-10 mx-auto ' >
                             <button type="submit" className="btn btn-primary rounded-pill mt-3">Submit</button>
-                            <button type="button" className="btn btn-primary rounded-pill mt-3">Get Name</button>
+                            <button type="button" className="btn btn-primary rounded-pill mt-3" onClick={getName}>Get Name</button>
                         </div>
                     </form>
                 </div>
